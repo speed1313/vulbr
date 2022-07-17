@@ -153,6 +153,9 @@ fn paint_render_object(obj: &Rc<RefCell<RenderObject>>, content_area: &Box) {
             if obj.borrow().style.font_size() == FontSize::XXLarge {
                 markup_attrs.push_str(&format!("size=\"xx-large\""));
             }
+            if obj.borrow().style.font_size() == FontSize::_XLarge {
+                markup_attrs.push_str(&format!("size=\"x-large\""));
+            }
 
             // TODO: investigate why this needs.
             label.set_xalign(0.0);
