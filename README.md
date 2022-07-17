@@ -39,5 +39,4 @@ and access to `http://localhost:8888/work/4-3.py` in VulBr.
 
 
 
-# Note by speed
-- when something wrong, vulbr will just panic!.
+
