@@ -394,6 +394,7 @@ impl Iterator for HtmlTokenizer {
                 // https://html.spec.whatwg.org/multipage/parsing.html#attribute-value-(single-quoted)-state
                 State::AttributeValueSingleQuoted => {
                     if c == '\'' {
+                        
                         self.state = State::AfterAttributeValueQuoted;
                         continue;
                     }

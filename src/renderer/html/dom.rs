@@ -363,6 +363,7 @@ impl HtmlParser {
         }
     }
 
+
     /// Returns true if the stack of open elements has NodeKind::Element::<element_kind> node.
     fn contain_in_stack(&mut self, element_kind: ElementKind) -> bool {
         for i in 0..self.stack_of_open_elements.len() {
@@ -678,6 +679,7 @@ impl HtmlParser {
                             ref tag,
                             self_closing: _,
                         }) => {
+                            println!("token = {:?}", token);
                             if tag == "style" {
                                 self.pop_until(ElementKind::Style);
                                 self.mode = self.original_insertion_mode;
@@ -692,6 +694,7 @@ impl HtmlParser {
                             }
                         }
                         Some(HtmlToken::Char(c)) => {
+                            print!("{}",c);
                             self.insert_char(c);
                             token = self.t.next();
                             continue;
